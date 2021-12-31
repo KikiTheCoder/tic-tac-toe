@@ -13,7 +13,7 @@ import {
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
   animations: [
-    trigger("winner", [
+    trigger("winner-overlay", [
       transition(':enter', [
         style({ opacity: 0.0001 }),
         animate('300ms', style({ opacity: 1 })),
@@ -28,6 +28,7 @@ export class BoardComponent implements OnInit {
   squares: string[] = [];
   xIsNext: boolean = false;
   winner: string | null = null;
+  moves: number = 0;
 
   constructor() { }
 
@@ -39,6 +40,7 @@ export class BoardComponent implements OnInit {
     this.squares = Array(9).fill(null);
     this.winner = "";
     this.xIsNext = true;
+    this.moves = 0;
   }
 
   get player() {
@@ -46,6 +48,8 @@ export class BoardComponent implements OnInit {
   }
 
   makeMove(idx: number) {
+    this.moves++
+
     if (!this.squares[idx]) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;

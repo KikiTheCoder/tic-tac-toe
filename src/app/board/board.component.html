@@ -1,22 +1,38 @@
-<h1>Current Player: {{ player }} </h1>
+<h1>Current Player: {{ player }}</h1>
 
-<div *ngIf="winner" [@winner] id="winner">
+<div *ngIf="winner" [@winner-overlay] class="winner-overlay">
   <div>
-    <div>
-      <h1>Player {{ winner }} won the game!</h1>
-      <button nbButton fullWidth status="danger" (click)="newGame()" class="new-game-btn">New Game</button>
-    </div>
+    <h1>Player {{ winner }} won the game!</h1>
+    <button nbButton fullWidth status="danger" (click)="newGame()" class="new-game-btn">
+      New Game
+    </button>
   </div>
 </div>
 
+<div *ngIf="moves >= 9 && winner == null" class="winner-overlay">
+  <div>
+    <h1>No One Won</h1>
+    <button nbButton fullWidth status="danger" (click)="newGame()" class="new-game-btn">
+      New Game
+    </button>
+  </div>
+</div>
 
 <main>
-    <app-square
-        *ngFor="let val of squares; let i = index"
-        [value]="val"
-        (click)="makeMove(i)">
-
-    </app-square>
+  <app-square
+    *ngFor="let val of squares; let i = index"
+    [value]="val"
+    (click)="makeMove(i)"
+  >
+  </app-square>
 </main>
 
-<button nbButton outline status="danger" (click)="newGame()" class="new-game-btn">Reset</button>
+<button
+  nbButton
+  outline
+  status="danger"
+  (click)="newGame()"
+  class="new-game-btn"
+>
+  Reset
+</button>

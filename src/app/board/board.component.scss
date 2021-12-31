@@ -12,7 +12,7 @@ app-square {
   margin: 20px;
 }
 
-#winner {
+.winner-overlay {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -23,17 +23,15 @@ app-square {
   display: flex;
 
   div {
-    display: flex;
+    display: block;
     margin: auto;
-
-    div {
-      display: block;
-
       h1 {
-        margin: 20px;
-        padding: 11px 18px
+        margin: auto
       }
-    }
+
+      button {
+        margin: auto;
+      }
   }
 }
 
