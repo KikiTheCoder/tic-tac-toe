@@ -1,0 +1,28 @@
+#hero-wrapper {
+  height: 45vh;
+  display: flex;
+}
+
+#hero {
+  margin: auto;
+  text-align: center;
+
+  h1 {
+    font-size: 6rem;
+    line-height: normal;
+  }
+}
+
+#game-mode {
+  text-align: center;
+
+  p {
+    font-size: 2.5rem;
+  }
+
+  button, a {
+    margin: 20px;
+  }
+}
+
+

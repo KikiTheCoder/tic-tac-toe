@@ -1,0 +1,16 @@
+@use '../../themes.scss' as *;
+
+
+button {
+  width: 100%; height: 100%; font-size: 5em !important;
+  border: solid 3px nb-theme(color-basic-default-border);
+  border-radius: 10px;
+}
+
+.x {
+  background: nb-theme(color-info-500)
+}
+
+.o {
+  background: nb-theme(color-danger-500)
+}
